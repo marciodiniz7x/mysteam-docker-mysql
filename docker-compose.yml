@@ -1,18 +1,22 @@
 version: '3'
 services:
-  app:
-    build: .
+  web:
+    image: php:apache
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
-      - .:var/www/html
+      - C:\Users\marciopc\Documents\ProjetosMeuPC\Docker-MySQL\mysteam-docker-mysql:/var/www/html
     depends_on:
-      - db
-
-  db:
+      - mysql
+  mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: "" 
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: mysteam
-      MYSQL_USER: root
-      MYSQL_PASSWORD: ""
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
