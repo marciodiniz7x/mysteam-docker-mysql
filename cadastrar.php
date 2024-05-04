@@ -5,17 +5,16 @@
         $banco = "clientes";
         $host = "localhost";
         $user = "root";
-        $senha = "";
+        $senha = 123456;
 
         $conexao = mysqli_connect($host, $user, $senha, $banco);
 
-        $nome = $_POST["nome_completo"];
-        $data = $_POST["data_nascimento"];
-        $logradouro = $_POST["logradouro"];
-        $numero = $_POST["numero"];
-        $bairro = $_POST["bairro"];
+        $nomeUsuario = $_POST["nome_usuario"];
+        $nomeCompleto = $_POST["noime_completo"];
+        $ingresso = $_POST["ingresso"];
+        
 
-        $sql = "INSERT INTO clientes VALUES(null, '$nome', '$data', '$logradouro', '$numero', '$bairro')";
+        $sql = "INSERT INTO clientes VALUES('$nomeUsuario', '$nomeCompleto', '$ingresso')";
 
     } else {
         echo "parâmetros não informados";
