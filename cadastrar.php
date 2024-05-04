@@ -10,7 +10,7 @@
         $conexao = mysqli_connect($host, $user, $senha, $banco);
 
         $nomeUsuario = $_POST["nome_usuario"];
-        $nomeCompleto = $_POST["noime_completo"];
+        $nomeCompleto = $_POST["nome_completo"];
         $ingresso = $_POST["ingresso"];
         
 
